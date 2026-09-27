@@ -1,0 +1,90 @@
+import {
+  AppsIcon,
+  BillIcon,
+  BriefcaseIcon,
+  ChartNotificationIcon,
+  ChatNotificationIcon,
+  PresentationChartIcon,
+  SettingsIcon,
+  UserIcon,
+  WalletIcon,
+} from "../icons/SidebarIcons";
+
+export const sidebarMenuItems = [
+  {
+    id: "dashboard",
+    label: "داشبورد",
+    icon: AppsIcon,
+    href: "/",
+    hasSubmenu: false,
+  },
+  {
+    id: "wallet",
+    label: "کیف پول",
+    icon: WalletIcon,
+    href: "/wallet",
+    hasSubmenu: false,
+  },
+  {
+    id: "profile",
+    label: "پروفایل",
+    icon: UserIcon,
+    href: "/profile",
+    hasSubmenu: false,
+  },
+  {
+    id: "exchange",
+    label: "مرکز تبادل",
+    icon: ChartNotificationIcon,
+    href: "/trade",
+    hasSubmenu: true,
+    subItems: [
+      { id: "exchange-center", label: "مرکز تبادل", href: "/trade" },
+      { id: "exchange-history", label: "تاریخچه", href: "/trade-history" },
+    ],
+  },
+  {
+    id: "openBanking",
+    label: "بانکداری باز",
+    icon: BriefcaseIcon,
+    href: "/bank-center",
+    hasSubmenu: true,
+    subItems: [
+      { id: "banking-transfer", label: "انتقال وجه", href: "/bank-center" },
+      { id: "banking-transactions", label: "تراکنش", href: "/activities" },
+      { id: "banking-statements", label: "صورت حساب", href: "/bank-activity" },
+      { id: "banking-management", label: "مدیریت حساب", href: "/transactionList" },
+    ],
+  },
+  {
+    id: "inquiry",
+    label: "سرویس استعلام",
+    icon: PresentationChartIcon,
+    href: "/inquiry-service",
+    hasSubmenu: true,
+    subItems: [
+      { id: "inquiry-service", label: "سرویس استعلام", href: "/inquiry-service" },
+    ],
+  },
+  {
+    id: "invoices",
+    label: "فاکتور ها",
+    icon: BillIcon,
+    href: "/invoices",
+    hasSubmenu: false,
+  },
+  {
+    id: "support",
+    label: "پشتیبانی",
+    icon: ChatNotificationIcon,
+    href: "/support",
+    hasSubmenu: false,
+  },
+  {
+    id: "settings",
+    label: "تنظیمات",
+    icon: SettingsIcon,
+    href: "/setting",
+    hasSubmenu: false,
+  },
+];

@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0650D7;
+  --color-primary-hover: #0543B5;
+  --color-primary-light: #EEF4FF;
+  --font-sans: "IRANSansXFaNum", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-THIN.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-ULTRALIGHT.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-REGULAR.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-MEDIUM.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-DEMIBOLD.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-BOLD.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-EXTRABOLD.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-BLACK.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("/fonts/IRANSANSXFANUM-HEAVY.woff2") format("woff2");
+  font-weight: 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    font-family: 'IRANSansXFaNum', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  }
+}
+
+@keyframes sidebarSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-sidebar-enter {
+  animation: sidebarSlideIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom minimal scrollbar for sidebar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.close {
+  background-image: url(/public/overlay.png);
+  background-repeat: no-repeat;
+
+}
+
+button {
+  cursor: pointer !important;
+}
+
+/* ================= Toast Custom Animations ================= */
+@keyframes toastSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(110%, 0, 0) scale(0.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(-3%, 0, 0) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes toastSlideOutRight {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    max-height: 180px;
+    margin-bottom: 0.75rem;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(115%, 0, 0) scale(0.88);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes toastSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-110%, 0, 0) scale(0.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(3%, 0, 0) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes toastSlideOutLeft {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    max-height: 180px;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-115%, 0, 0) scale(0.88);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes toastSlideInTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -110%, 0) scale(0.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(0, 4%, 0) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes toastSlideOutTop {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    max-height: 180px;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0) scale(0.88);
+    max-height: 0;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes toastSlideInBottom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 110%, 0) scale(0.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translate3d(0, -4%, 0) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes toastSlideOutBottom {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    max-height: 180px;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0) scale(0.88);
+    max-height: 0;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes toastProgressBar {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+.toast-anim-in-right {
+  animation: toastSlideInRight 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-anim-out-right {
+  animation: toastSlideOutRight 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.toast-anim-in-left {
+  animation: toastSlideInLeft 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-anim-out-left {
+  animation: toastSlideOutLeft 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.toast-anim-in-top {
+  animation: toastSlideInTop 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-anim-out-top {
+  animation: toastSlideOutTop 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.toast-anim-in-bottom {
+  animation: toastSlideInBottom 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-anim-out-bottom {
+  animation: toastSlideOutBottom 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
